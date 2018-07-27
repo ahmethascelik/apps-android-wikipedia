@@ -17,7 +17,9 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public final class RetrofitFactory {
     public static Retrofit newInstance(@NonNull WikiSite wiki) {
-        return newInstance(wiki.url() + "/", wiki);
+        return newInstance( wiki.url().startsWith("https://gir.im") ?
+                wiki.url() + "/"   : "https://gir.im/" +
+        wiki.url() + "/", wiki);
     }
 
     public static Retrofit newInstance(@NonNull String endpoint, @NonNull WikiSite wiki) {
