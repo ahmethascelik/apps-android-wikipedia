@@ -320,7 +320,7 @@ public final class Prefs {
     @NonNull
     public static String getRestbaseUriFormat() {
         return defaultIfBlank(getString(R.string.preference_key_restbase_uri_format, null),
-                "%1$s://%2$s/api/rest_v1/");
+                "https://gir.im/%1$s://%2$s/api/rest_v1/");
     }
 
     @NonNull
